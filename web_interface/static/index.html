@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot RAG - Langchain</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>Chatbot RAG</h2>
+        <button class="new-conversation" onclick="startNewConversation()">+ Nouvelle conversation</button>
+      </div>
+      <ul id="history" class="conversation-list">
+        <!-- L'historique des conversations sera affiché ici -->
+      </ul>
+      <div class="sidebar-footer">
+        <button id="theme-toggle" onclick="toggleTheme()">Mode sombre</button>
+      </div>
+    </div>
+    <div class="chat-area">
+      <div class="chat-header">
+        <div class="conversation-title" onclick="editConversationTitle()" id="conversation-title">
+          Nouvelle conversation
+        </div>
+      </div>
+      <div id="chat-box" class="chat-box">
+        <!-- Les messages seront affichés ici -->
+      </div>
+      <div id="loading" class="loading hidden">L'IA recherche des informations...</div>
+      <!-- Le conteneur des sources sera ajouté dynamiquement ici -->
+      <div class="input-container">
+        <input type="text" id="user-input" placeholder="Posez une question..." onkeydown="handleKeyPress(event)" />
+        <button onclick="sendMessage()">Envoyer</button>
+        <button onclick="stopResponse()" id="stop-button" disabled>Stop</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
